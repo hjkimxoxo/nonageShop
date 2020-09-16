@@ -1,0 +1,2 @@
+SELECT USER FROM dual;
+
