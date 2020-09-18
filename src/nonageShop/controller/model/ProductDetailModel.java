@@ -17,11 +17,11 @@ public class ProductDetailModel implements Command {
 			throws ServletException, IOException {
 		
 		request.setCharacterEncoding("UTF-8");
-		int no = Integer.parseInt(request.getParameter("no"));
+		int no = Integer.parseInt(request.getParameter("no").trim());
 		Product p = service.getProduct(no);
 		request.setAttribute("productVO",p);
 		
-		return "productDetail.jsp";
+		return "product/productDetail.jsp";
 	}
 
 }

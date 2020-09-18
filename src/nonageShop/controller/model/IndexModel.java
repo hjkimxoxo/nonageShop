@@ -22,7 +22,7 @@ public class IndexModel implements Command {
 		//System.out.println("오나");
 		ArrayList<Product> newList = service.listNewProduct();
 		ArrayList<Product> bestList = service.listBestProduct();
-		System.out.println(newList);
+		//System.out.println(newList);
 		request.setAttribute("newProductList", newList);
 		request.setAttribute("bestProductList", bestList);
 		
