@@ -1,21 +1,47 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+  pageEncoding="UTF-8"%>
+<%@ include file="../header.jsp" %>  
 
-<%@page import="nonageShop.ds.JndiDS"%>
-<%@page import="nonageShop.ds.JdbcUtil"%>
+  <!--메인 이미지 들어가는 곳 시작 --->
+  <div class="clear"></div>
+  <div id="main_img">
+    <img src="images/main_img.jpg" >    
+  </div>
 
+  <!--메인 이미지 들어가는 곳 끝--->
+ 
+  <div class="clear"></div>   
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>데이터베이스 연동 테스트</title>
-</head>
-<body>
-	<c:set var="con" value="${JdbcUtil.getConnection()}"></c:set>
-	<c:out value="${con}"></c:out><br>
-	<c:set var="con1" value="${JndiDS.getConnection()}"></c:set>
-	<c:out value="${con1}"></c:out><br>
-</body>
-</html>
+  <div id="front">   
+    <h2> New Item</h2>
+    <div id="bestProduct">         
+      <c:forEach items="${newProductList}"  var="productVO">
+        <div id="item">
+          <a href=
+"productDetail.do?no=${productVO.no}">
+            <img src="product_images/${productVO.image}" />
+            <h3> ${productVO.name} </h3>    
+            <p>${productVO.salePrice} </p>
+          </a>    
+        </div>
+      </c:forEach>      
+    </div>
+   <div class="clear"></div>
+     
+    <h2> Best Item</h2>     
+      <div id="bestProduct">         
+        <c:forEach items="${bestProductList}"  var="productVO">
+          <div id="item">
+           <a href=
+"productDetail.do?no=${productVO.no}">
+             <img src="product_images/${productVO.image}" />
+           <h3> ${productVO.name} </h3>    
+           <p>${productVO.salePrice} </p>
+        </a>  
+      </div>
+    </c:forEach>      
+  </div>
+  <div class="clear"></div>
+  </div>
+    
+<%@ include file="../footer.jsp" %>    
