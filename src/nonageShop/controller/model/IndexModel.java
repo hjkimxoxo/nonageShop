@@ -17,6 +17,7 @@ public class IndexModel implements Command {
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		request.setCharacterEncoding("UTF-8");
 		
 		//System.out.println("오나");

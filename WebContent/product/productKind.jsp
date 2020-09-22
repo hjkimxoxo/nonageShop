@@ -5,9 +5,9 @@
 <%@ include file="sub_menu.html" %>       
   <article>
     <h2> Item</h2>     
-    <c:forEach items="${productKindList }"  var="productVO">
+    <c:forEach items="${productKindList}"  var="productVO">
       <div id="item">
-        <a href="ProductDetail.do?no=${productVO.no}"> 
+        <a href="productDetail.do?no=${productVO.no}"> 
           <img src="product_images/${productVO.image}" />
           <h3>${productVO.name} </h3>        
           <p>${productVO.salePrice} </p>

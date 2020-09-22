@@ -29,6 +29,7 @@ public class ProductDaoTest {
 
 	@Test
 	public void testListBestProduct() {
+		
 		System.out.print("BestProduct, 8슬리퍼 핑크샌달 3슬리퍼");
 		ArrayList<Product> list = dao.listBestProduct();
 		Assert.assertNotNull(list);

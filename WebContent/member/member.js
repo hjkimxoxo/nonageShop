@@ -1,51 +1,51 @@
 function go_save() {
   if (document.formm.id.value == "") {
-    alert("¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ¿© ÁÖ¼¼¿ä.");
+    alert("ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì—¬ ì£¼ì„¸ìš”.");
     document.formm.id.focus();
   } else if (document.formm.id.value != document.formm.reid.value) {
-    alert("Áßº¹È®ÀÎÀ» Å¬¸¯ÇÏ¿© ÁÖ¼¼¿ä.");
+    alert("ì¤‘ë³µí™•ì¸ì„ í´ë¦­í•˜ì—¬ ì£¼ì„¸ìš”.");
     document.formm.id.focus();
   } else if (document.formm.pwd.value == "") {
-    alert("ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+    alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
     document.formm.pwd.focus();
   } else if ((document.formm.pwd.value != document.formm.pwdCheck.value)) {
-    alert("ºñ¹Ğ¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.");
+    alert("ë¹„ë°€ë²ˆí˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
     document.formm.pwd.focus();
   } else if (document.formm.name.value == "") {
-    alert("ÀÌ¸§À» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+    alert("ì´ë¦„ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
     document.formm.name.focus();
   } else if (document.formm.email.value == "") {
-    alert("ÀÌ¸ŞÀÏÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+    alert("ì´ë©”ì¼ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
     document.formm.email.focus();
   } else {
-    document.formm.action = "NonageServlet?command=join";
+    document.formm.action = "join.do";
     document.formm.submit();
   }
 }
 
 function idcheck() {
   if (document.formm.id.value == "") {
-    alert('¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ¿© ÁÖ½Ê½Ã¿À.');
+    alert('ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì—¬ ì£¼ì‹­ì‹œì˜¤.');
     document.formm.id.focus();
     return;
   }
-  var url = "NonageServlet?command=id_check_form&id=" 
+  var url = "idCheck.do?id=" 
 + document.formm.id.value;
   window.open( url, "_blank_1",
 "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=330, height=200");
 }
 
 function post_zip() {
-  var url = "NonageServlet?command=find_zip_num";
+  var url = "findAddress.do";
   window.open( url, "_blank_1",
-"toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=550, height=300, top=300, left=300, ");
+"toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=550, height=400, top=300, left=300, ");
 }
 
 function go_next() {
   if (document.formm.okon1[0].checked == true) {
-    document.formm.action = "NonageServlet?command=join_form";
+    document.formm.action = "join.do";
     document.formm.submit();
   } else if (document.formm.okon1[1].checked == true) {
-    alert('¾à°ü¿¡ µ¿ÀÇÇÏ¼Å¾ß¸¸ ÇÕ´Ï´Ù.');
+    alert('ì•½ê´€ì— ë™ì˜í•˜ì…”ì•¼ë§Œ í•©ë‹ˆë‹¤.');
   }
 }

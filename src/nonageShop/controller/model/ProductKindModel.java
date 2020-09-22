@@ -23,8 +23,8 @@ public class ProductKindModel implements Command {
 		String kind = request.getParameter("kind").trim();
 		ArrayList<Product> list = service.listKindProduct(kind);
 		request.setAttribute("productKindList", list);
-		response.sendRedirect("product/productKind.jsp");
-		return null;
+		
+		return "product/productKind.jsp";
 	}
 
 }

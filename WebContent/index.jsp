@@ -17,8 +17,7 @@
     <div id="bestProduct">         
       <c:forEach items="${newProductList}"  var="productVO">
         <div id="item">
-          <a href=
-"productDetail.do?no=${productVO.no}">
+          <a href="productDetail.do?no=${productVO.no}">
             <img src="product_images/${productVO.image}" />
             <h3> ${productVO.name} </h3>    
             <p>${productVO.salePrice} </p>

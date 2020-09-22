@@ -6,7 +6,7 @@
   <article>
     <h1> Item </h1>
     <div id="itemdetail" >
-      <form  method="get" name="form">    
+      <form  method="get" name="formm">    
         <fieldset>
           <legend> Item detail Info</legend>  
           <a href="productDetail.do?no=${productVO.no}">         
@@ -19,7 +19,7 @@
           <p> ${productVO.salePrice} 원</p>  
           <label> 수 량 : </label>
           <input  type="text"      name="quantity"  size="2"      value="1"><br>
-          <input  type="hidden"    name="pseq"       value="${productVO.no}"><br>
+          <input  type="hidden"    name="no"       value="${productVO.no}"><br>
         </fieldset>
         <div class="clear"></div>
         <div id="buttons">
