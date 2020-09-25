@@ -28,10 +28,11 @@ public class OrderListModel implements Command {
 		if (loginUser == null) {
 			return "login.do";
 		}else {
-
+			
+			
 			ArrayList<Integer> noList = service.selectNoOrdering(loginUser.getId());
 			ArrayList<Order> orderList = new ArrayList<Order>();
-
+			
 			for(int orderNo:noList) {
 				orderList.add(service.listByOrderById(loginUser.getId(), "1", orderNo));
 			}
@@ -40,8 +41,12 @@ public class OrderListModel implements Command {
 			
 			ArrayList<OrderDetail> detailList = service.listOrderDetailById(loginUser.getId());
 			
+			int totalPrice = 0;
+			for(OrderDetail detail:detailList) {
+				totalPrice += detail.getCart().getProduct().getSalePrice() * detail.getCart().getQuantity();
+			}
 			
-			
+			request.setAttribute("totalPrice", totalPrice);
 			request.setAttribute("title", "진행중인 주문 내역");
 			request.setAttribute("orderList", orderList);
 			request.setAttribute("detail", detailList);
