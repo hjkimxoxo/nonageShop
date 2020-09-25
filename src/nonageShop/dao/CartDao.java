@@ -14,4 +14,7 @@ public interface CartDao {
 	
 	ArrayList<Cart> cartList();
 
+	int updateCartResult(Cart cart);
+
+
 }

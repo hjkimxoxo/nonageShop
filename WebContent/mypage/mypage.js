@@ -32,7 +32,7 @@ function go_cart_delete() {
 }
 
 function go_order_insert() {
-  document.formm.action = "NonageServlet?command=order_insert";
+  document.formm.action = "orderInsert.do";
   document.formm.submit();
 }
 
@@ -54,12 +54,12 @@ function go_order_delete() {
     alert("삭제할 항목을 선택해 주세요.");
 
   } else {
-    document.formm.action = "NonageServlet?command=order_delete";
+    document.formm.action = "orderDelete.do";
     document.formm.submit();
   }
 }
 
 function go_order() {
-  document.formm.action = "NonageServlet?command=mypage";
+  document.formm.action = "myPage.do";
   document.formm.submit();
 }

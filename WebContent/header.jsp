@@ -64,7 +64,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script
          <a href="myPage.do">MY PAGE</a>
        </li><li>/</li>
        <li>
-         <a href="NonageServlet?command=qna_list">Q&amp;A(1:1)</a>
+         <a href="qnaList.do">Q&amp;A(1:1)</a>
        </li>
      </ul>
     </nav>

@@ -6,66 +6,41 @@ import java.util.Date;
 public class OrderDetail {
 	private int no; 
 	private Date orderDate; 
-	private Order order; //no
-	private Member member; //id, name, zipNum, address, phone, 
-	private Product product; // name, salePrice
-	private Cart cart; //pno, quantity, resultYn
+	private String result;
+	private Cart cart;
 	
+	public OrderDetail() {}
 	
-	
-	public OrderDetail() {
-	}
-	
-
-
 	public OrderDetail(int no) {
 		super();
 		this.no = no;
 	}
-
-
-
-	public OrderDetail(Date orderDate, Order order, Member member, Product product, Cart cart) {
-		
-		
-		this.orderDate = orderDate;
-		this.order = order;
-		this.member = member;
-		this.product = product;
+	
+	
+	
+	public OrderDetail(Cart cart) {
+		super();
 		this.cart = cart;
 	}
-	
-	
+
+	public OrderDetail(int no, Date orderDate, Cart cart, String result) {
+		super();
+		this.no = no;
+		this.orderDate = orderDate;
+		this.cart = cart;
+		this.result = result;
+	}
 	public int getNo() {
 		return no;
 	}
 	public void setNo(int no) {
 		this.no = no;
 	}
-	
 	public Date getOrderDate() {
 		return orderDate;
 	}
-	public void setOrderDate(Timestamp orderDate) {
+	public void setOrderDate(Date orderDate) {
 		this.orderDate = orderDate;
-	}
-	public Order getOrder() {
-		return order;
-	}
-	public void setOrder(Order order) {
-		this.order = order;
-	}
-	public Member getMember() {
-		return member;
-	}
-	public void setMember(Member member) {
-		this.member = member;
-	}
-	public Product getProduct() {
-		return product;
-	}
-	public void setProduct(Product product) {
-		this.product = product;
 	}
 	public Cart getCart() {
 		return cart;
@@ -73,13 +48,17 @@ public class OrderDetail {
 	public void setCart(Cart cart) {
 		this.cart = cart;
 	}
-
-
+	public String getResult() {
+		return result;
+	}
+	public void setResult(String result) {
+		this.result = result;
+	}
 	@Override
 	public String toString() {
-		return String.format("OrderDetail [no=%s, orderDate=%s, order=%s, member=%s, product=%s, cart=%s]", 
-				no, orderDate, order, member, product, cart);
+		return String.format("OrderDetail [no=%s, orderDate=%s, cart=%s, result=%s]", no, orderDate, cart, result);
 	}
+	
 	
 	
 	
