@@ -8,7 +8,7 @@
     <form name="formm" method="post">
     <c:choose>
     <c:when test= "${cartList.size() == 0}">
-      <h3 style="color: red;text-align: center;"> 장바구니가 비었습니다. </h3> 
+      <h3 style="color: red;text-align: center;"> ${message} </h3> 
     </c:when>
     <c:otherwise>
       <table id="cartList">
@@ -25,7 +25,7 @@
           </td>
           <td> ${cartVO.quantity} </td>
           <td> 
-            <fmt:formatNumber value="${cartVO.product.salePrice*cartVO.quantity}" 
+            <fmt:formatNumber value="${totalPrice}" 
                               type="currency"/> 
           </td>      
           <td> <fmt:formatDate value="${cartVO.regDate}" type="date"/></td>      

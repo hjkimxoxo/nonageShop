@@ -36,6 +36,14 @@ public class MyPageModel implements Command {
 				orderList.add(service.listByOrderById(loginUser.getId(), "1", orderNo));
 			}
 			System.out.println(orderList);
+	
+			
+			int totalPrice = 0;
+			ArrayList<OrderDetail> detail = service.listOrderDetailById(loginUser.getId());
+			for(OrderDetail od : detail) {
+				totalPrice += od.getCart().getProduct().getSalePrice() * od.getCart().getQuantity();
+			}
+			request.setAttribute("totalPrice", totalPrice);
 			request.setAttribute("title", "진행중인 주문 내역");
 			request.setAttribute("orderList", orderList);
 			

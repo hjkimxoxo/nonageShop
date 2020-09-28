@@ -16,7 +16,11 @@
         <td> <fmt:formatDate value="${orders.orderDate}" type="date"/></td>
         <td> ${orders.no}</td>    
         <td> ${orders.details[0].cart.product.name} 외 ${fn:length(orders.details)}건 </td>
-        <td> <fmt:formatNumber value="${totalPrice}" type="currency"/> </td>
+        <c:set var="subTotal" value="0"/>
+        <c:forEach items="${orders.details}" var="detail">
+        <c:set var="subTotal" value="${subTotal + detail.cart.product.salePrice}"/> 
+        </c:forEach>
+         <td> <fmt:formatNumber value="${subTotal}" type="currency"/> </td>
         <td> <a href="orderDetail.do?no=${orders.no}"> 조회 </a></td>
       </tr>
       </c:forEach>    

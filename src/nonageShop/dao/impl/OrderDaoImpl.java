@@ -121,7 +121,7 @@ public class OrderDaoImpl implements OrderDao {
 	}
 
 	public int selectMaxOrderNo() {
-		 String sql = "select max(no)+1 from orders";
+		 String sql = "select max(no) from orders";
 	        try (Connection con = JdbcUtil.getConnection();
 	        		PreparedStatement pstmt = con.prepareStatement(sql);
 	                ResultSet rs = pstmt.executeQuery()) {

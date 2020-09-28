@@ -23,9 +23,10 @@ public class OrderInsertModel implements Command {
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		HttpSession session = request.getSession();
 		Member loginUser = (Member) session.getAttribute("loginUser");
-
+		
 		if (loginUser == null) {
 			return "login.do";
 		} else {
@@ -33,8 +34,9 @@ public class OrderInsertModel implements Command {
 			System.out.println(order);
 			
 			int maxNo = oService.addOrderAndDetail(order);
-			return "orderList.do?no=" + maxNo;
+			return "myPage.do";
 		}
+		
 	}
 
 	private Order getOrder(Member member) {

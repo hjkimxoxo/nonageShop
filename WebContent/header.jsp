@@ -44,7 +44,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script
        <c:when test="${empty sessionScope.loginUser}">
        <li>         
          <a href="login.do " style="width:110px;">LOGIN(CUSTOMER</a>   
-	     <a href="Admin.do" style="width:100px;">| ADMIN)</a>
+	     <a href="adminIndex.do" style="width:100px;">| ADMIN)</a>
 	   </li>		       
        <li>/</li>
        <li><a href="contract.do">JOIN</a></li>

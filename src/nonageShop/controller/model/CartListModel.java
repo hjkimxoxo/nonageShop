@@ -27,17 +27,17 @@ public class CartListModel implements Command{
 				return "login.do";
 			}else {
 				ArrayList<Cart> cartList = service.cartListById(loginUser.getId());
-				
 				int totalPrice = 0;
-				
 				for(Cart cart: cartList) {
 					totalPrice += cart.getProduct().getSalePrice() * cart.getQuantity();
 				}
 				
+				
 				request.setAttribute("cartList", cartList);
 				request.setAttribute("totalPrice", totalPrice);
-				return "mypage/cartList.jsp";
+				
 			}
+			return "mypage/cartList.jsp";
 		
 		
 	}
