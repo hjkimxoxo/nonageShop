@@ -36,8 +36,7 @@ function worker_check()
     <div class="clear"></div>
     <article>
       <div id="loginform">
-      <form name="frm" method="post" 
-action="adminLogin.do">
+      <form name="frm" method="post" action="adminLogin.do">
       <table>
         <tr>
           <td> 아 이 디 </td>

@@ -14,5 +14,18 @@ public interface ProductDao {
 	//종류별 상품리스트
 	ArrayList<Product> listKindProduct(String kind);
 	
+	//--관리자-- 
+	
+	int totalRecord(String productName);
+	//페이지 이동
+	String pageNumber(int totalPage, String name);
+	
+	ArrayList<Product> listProduct(int totalPage, String productName);
+	
+	int insertProduct(Product product);
+	
+	int updateProduct(Product product);
+	
+	int deleteProduct(Product product);
 	
 }

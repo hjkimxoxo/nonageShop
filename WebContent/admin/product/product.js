@@ -54,7 +54,7 @@ function go_save()
 		// 디비에 추가하기 위한 페이지인 product_save.jsp로 이동하되
 		// 입력받은 상품 코드를 쿼리 스트링 형태로 전달한다.
 		// 상품 코드로 폴더를 만들어 거기에 이미지 파일을 업로드한다.
-		theForm.action = "NonageServlet?command=admin_product_write";
+		theForm.action = "adminProductWrite.do";
 		theForm.submit();
 	}
 }
@@ -96,7 +96,7 @@ function go_detail(tpage, pseq) {
 
 function go_wrt() {
 	var theForm = document.frm;
-	theForm.action = "NonageServlet?command=admin_product_write_form";
+	theForm.action = "adminProductWriteForm.do";
 	theForm.submit();
 }
 // **************** productDetail.jsp

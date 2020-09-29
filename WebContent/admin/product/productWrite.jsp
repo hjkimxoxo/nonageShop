@@ -56,6 +56,7 @@
 <input class="btn" type="button" value="취소" onClick="go_mov()">
 </form> 
 </article>
+
 <%@ include file="/admin/footer.jsp"%>
 </body>
 </html>

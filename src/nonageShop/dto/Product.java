@@ -20,6 +20,19 @@ public class Product {
 	public Product(int no) {
 		this.no = no;
 	}
+	
+	
+
+	public Product(String name, String kind, int price, int salePrice, int margin, String content, String image) {
+		super();
+		this.name = name;
+		this.kind = kind;
+		this.price = price;
+		this.salePrice = salePrice;
+		this.margin = margin;
+		this.content = content;
+		this.image = image;
+	}
 
 	public Product(int no, String name, int salePrice, String image) {
 		this.no = no;

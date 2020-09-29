@@ -10,9 +10,9 @@
 <link rel="stylesheet" href="admin/css/admin.css">
 <script type="text/javascript" src="admin/product/product.js"></script>
 <c:choose>
-	<c:when test="${empty workerId}">
+	<c:when test="${empty id}">
 		<script type="text/javascript">
-			location.href = 'NonageServlet?command=admin_login_form';
+			location.href = 'adminLogin.do';
 		</script>
 	</c:when>
 </c:choose>
@@ -21,12 +21,12 @@
 	<div id="wrap">
 		<header>			
 			<div id="logo">
-				<a href="NonageServlet?command=admin_login_form"> 
+				<a href="adminLogin.do"> 
 					<img style="width:800px" src="admin/images/bar_01.gif">
 					<img src="admin/images/text.gif">
 				</a>
 			</div>	
 			<input class="btn" type="button"  value="logout"  style="float: right;"
-			   onClick="location.href='NonageServlet?command=admin_logout'">			
+			   onClick="adminLogout.do'">			
 		</header>
 		<div class="clear"></div>

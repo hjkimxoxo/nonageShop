@@ -16,16 +16,17 @@ public class AdminLoginModel implements Command {
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		String id = request.getParameter("id").trim();
 		String pwd = request.getParameter("pwd").trim();
 		
 		int result = service.adminCheck(id, pwd);
-		String msg = "";
+		System.out.println(result);
 		
 		if(result == 1) { //성공
 			HttpSession session = request.getSession();
 			session.setAttribute("id", id);
-			return "admin/product/productList.jsp";
+			return "adminProductList.do";
 		}else if(result == 0) {
 			request.setAttribute("message", "비밀번호를 확인하세요.");
 		}else if(result == -1) {
@@ -33,6 +34,8 @@ public class AdminLoginModel implements Command {
 		}
 		
 		return "admin/main.jsp";
+		
+		
 	}
 
 }
